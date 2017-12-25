@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-link  v-for="tag in visitedViews" :to="tag.path" >
-        {{tag.name}}
-    </router-link>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data() {
-    return {
-      visitedViews:[{name:'菜单1',path:'/1'},{name:'菜单2',path:'/2'}]
-    }
-  },
+  name: 'app'
 }
 </script>
 

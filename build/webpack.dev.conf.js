@@ -45,11 +45,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    //单模块
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
     }),
+    //多模块
+    /*new HtmlWebpackPlugin({
+      filename: 'm1-index.html',
+      template: './src/module/m1/index.html',
+      inject: true,
+      chunks: ['m1'],//依赖的js文件 , 'vendor', 'manifest'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'm2-index.html',
+      template: './src/module/m2/index.html',
+      inject: true,
+      chunks: ['m2'],
+    }),*/
   ]
 })
 

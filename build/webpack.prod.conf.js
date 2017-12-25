@@ -46,7 +46,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -60,7 +60,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
+   /* new HtmlWebpackPlugin({ 单模块
       filename: config.build.index,
       template: 'index.html',
       inject: true,
@@ -73,6 +73,29 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
+    }),*/
+   //多模块
+    new HtmlWebpackPlugin({
+      filename: 'm1-index.html',
+      template: './src/module/m1/index.html',
+      inject: true,
+      chunks: ['m1'],//依赖的js文件 , 'vendor', 'manifest'
+      minify: { //压缩HTML文件
+        removeComments: true, //移除HTML中的注释
+        collapseWhitespace: false, //删除空白符与换行符
+        removeAttributeQuotes: false  //去除属性引用
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'm2-index.html',
+      template: './src/module/m2/index.html',
+      inject: true,
+      chunks: ['m2'],
+      minify: { //压缩HTML文件
+        removeComments: true, //移除HTML中的注释
+        collapseWhitespace: false, //删除空白符与换行符
+        removeAttributeQuotes: false  //去除属性引用
+      }
     }),
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),

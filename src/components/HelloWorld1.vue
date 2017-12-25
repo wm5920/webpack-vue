@@ -8,7 +8,7 @@
 export default {
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: '1页面'
     }
   }
 }

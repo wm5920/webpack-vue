@@ -1,21 +1,17 @@
-# webpack-vue
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
+# webpack-vue学习demo
+##运行
 npm run dev
-
-# build for production with minification
+##打包
 npm run build
+##多入口文件配置
+主要修改文件，详细见注释“单、多模块”
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+webpack.base.conf.js
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+webpack.dev.conf.js
+
+webpack.prod.conf.js
+
+多入口模块主页面在module/m1,m2中
+##动态路由配置
+HelloWorld2.vue中的created方法
