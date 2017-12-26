@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-link  v-for="tag in visitedViews" :to="tag.path" >
+    <router-link  v-for="tag in visitedViews" :to="tag.path" :key="tag.name">
         {{tag.name}}
     </router-link>
     <router-view/>

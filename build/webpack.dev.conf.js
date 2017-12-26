@@ -45,6 +45,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    /*new HtmlWebpackPlugin({//要放在主页前面，不然页面无法正常展示
+      favicon: './static/favicon.ico'
+    }),*/
     //单模块
     new HtmlWebpackPlugin({
       filename: 'index.html',

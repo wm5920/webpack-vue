@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <router-link  v-for="tag in Array.from(visitedViews)" :to="tag.path" >
+    <router-link  v-for="tag in Array.from(visitedViews)" :to="tag.path" :key="tag.name">
       {{tag.name}}
     </router-link>
     <router-view/>
