@@ -57,6 +57,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
+    new HtmlWebpackPlugin({//要放在主页前面，不然页面无法正常展示
+      favicon: 'favicon.ico'
+    }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin

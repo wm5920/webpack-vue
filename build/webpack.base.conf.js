@@ -10,13 +10,13 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'//单模块
-  },
   /*entry: {
+    app: './src/main.js'//单模块
+  },*/
+  entry: {
     'm1': './src/module/m1/main.js',//多模块模块
     'm2': './src/module/m2/main.js'
-  },*/
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
