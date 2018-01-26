@@ -63,7 +63,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
-   /* new HtmlWebpackPlugin({ 单模块
+    //单模块
+    new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
       inject: true,
@@ -76,9 +77,9 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
-    }),*/
+    }),
    //多模块
-    new HtmlWebpackPlugin({
+    /*new HtmlWebpackPlugin({
       filename: 'm1-index.html',
       template: './src/module/m1/index.html',
       inject: true,
@@ -99,7 +100,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         collapseWhitespace: false, //删除空白符与换行符
         removeAttributeQuotes: false  //去除属性引用
       }
-    }),
+    }),*/
     // keep module.id stable when vender modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

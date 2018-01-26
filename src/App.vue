@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png"/>
+    <img src="~static/logo.png"/>
     <router-link  v-for="tag in visitedViews" :to="tag.path" :key="tag.name">
-        {{tag.name}}
+      {{tag.name}}
     </router-link>
     <router-view/>
   </div>

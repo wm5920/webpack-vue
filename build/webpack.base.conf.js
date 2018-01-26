@@ -10,13 +10,13 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  /*entry: {
-    app: './src/main.js'//单模块
-  },*/
   entry: {
+    app: './src/main.js'//单模块
+  },
+  /*entry: {
     'm1': './src/module/m1/main.js',//多模块模块
     'm2': './src/module/m2/main.js'
-  },
+  },*/
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -29,6 +29,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'static':path.resolve(__dirname, '../static'),//增加这一行代码,页面通过~static引用
     }
   },
   module: {

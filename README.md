@@ -29,3 +29,22 @@ new HtmlWebpackPlugin({//要放在主页模板生成前面，不然页面无法�
       favicon: 'favicon.ico'
     }),
 ```
+## 服务器访问路径设置
+比如打包后dist文件存放到服务器/static/下，那前端该怎样调整才能让开发和生产表现一致呢？
+### 1 webpack.base.conf.js中添加别名
+```
+'static':path.resolve(__dirname, '../static'),
+```
+增加这一行代码,对于static文件下的资源页面通过~static引用,对于src/assets
+中的资源，通过@别名访问
+如
+```
+<img src="@/assets/logo.png"/>
+<img src="~static/logo.png"/>
+```
+### 2 在config/index.js中修改
+```
+assetsPublicPath: './',
+```
+
+

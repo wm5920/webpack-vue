@@ -48,14 +48,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({//要放在主页前面，不然页面无法正常展示
       favicon: 'favicon.ico'
     }),
-    //单模块
-    /*new HtmlWebpackPlugin({
+    //单模块 webpack.base.conf.js 的entry要同步修改
+    new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    }),*/
-    //多模块
-    new HtmlWebpackPlugin({
+    }),
+    //多模块 webpack.base.conf.js 的entry要同步修改
+    /*new HtmlWebpackPlugin({
       filename: 'm1-index.html',
       template: './src/module/m1/index.html',
       inject: true,
@@ -66,7 +66,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: './src/module/m2/index.html',
       inject: true,
       chunks: ['m2'],
-    }),
+    }),*/
   ]
 })
 

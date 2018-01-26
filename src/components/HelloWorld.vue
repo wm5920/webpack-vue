@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    你好
+    <img src="@/assets/logo.png"/>
+    <img src="~static/logo.png"/>
     <h1>{{ msg }}</h1>
   </div>
 </template>
