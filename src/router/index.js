@@ -13,6 +13,10 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     },
+    /*{
+      path: '/v1.0',
+      component: (resolve) => require(['@/components/HelloWorld-v1.0'], resolve)
+    },*/
     {
       path: '/1',
       component: HelloWorld1

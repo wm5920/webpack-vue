@@ -22,6 +22,7 @@ http://localhost:8080/+HtmlWebpackPlugin.filename
 http://localhost:8080/m1-index.html
 ## 动态路由配置
 HelloWorld2.vue中的created方法
+注意require不能直接用变量，不过可以通过固定路径部分+变量，如'src/views'+path,达到效果
 ## favicon设置
 webpack.dev.conf.js/webpack.prod.conf.js中定义，要注意插件顺序
 ```
